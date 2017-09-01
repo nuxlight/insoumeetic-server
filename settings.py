@@ -1,5 +1,5 @@
 # List of schema of app
-people_schema = {
+account_schema = {
     'username': {
         'type': 'string',
         'required': True,
@@ -17,15 +17,16 @@ people_schema = {
 }
 # EVE configurations
 DOMAIN = {
-    'people': {
-        'schema': people_schema,
-        'additional_lookup': {
+    'accounts': {
+        'schema': account_schema,
+        'additional_lookup':
+            {
                 'url': 'regex("[\w]+")',
                 'field': 'username'
             },
     }
 }
-MONGO_HOST = 'localhost'
+MONGO_HOST = '192.168.99.100'
 MONGO_PORT = 27017
 MONGO_DBNAME = 'insoumeetic'
 RESOURCE_METHODS = ['GET', 'POST', 'DELETE']
